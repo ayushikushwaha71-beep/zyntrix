@@ -2,17 +2,21 @@ import axios from 'axios';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
+// Safety check (production-safe)
 if (!BASE_URL) {
-    throw new Error("VITE_API_URL is missing in environment variables");
+    throw new Error("❌ VITE_API_URL is missing in environment variables");
 }
 
 const API_URL = `${BASE_URL}/api`;
 
 const api = axios.create({
     baseURL: API_URL,
+    withCredentials: true,
 });
 
-// Attach token
+/* =========================
+   TOKEN ATTACH (JWT)
+========================= */
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -46,4 +50,14 @@ export const noteAPI = {
     deleteNote: (id) => api.delete(`/notes/${id}`),
     toggleShare: (id) => api.put(`/notes/${id}/share`),
     getPublicNote: (shareId) => api.get(`/notes/public/${shareId}`),
+};
+
+/* =========================
+   AI API (FIX ADDED)
+   👉 THIS FIXES YOUR BUILD ERROR
+========================= */
+export const aiAPI = {
+    generate: (data) => api.post('/ai/generate', data),
+    improve: (data) => api.post('/ai/improve', data),
+    summarize: (data) => api.post('/ai/summarize', data),
 };
