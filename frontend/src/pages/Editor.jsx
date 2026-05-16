@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { noteAPI, aiAPI } from '../services/api';
+import { noteAPI } from "../services/api";
 
 const Editor = () => {
     const { id } = useParams();
