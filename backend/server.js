@@ -7,26 +7,43 @@ dotenv.config();
 
 const app = express();
 
+/* =========================
+   CORS CONFIG (FIXED)
+========================= */
 const corsOptions = {
     origin: [
-        'http://localhost:5173', 
-        'https://zyntrix-2l1l.vercel.app', 
-        'https://zyntrix-7w3h.vercel.app' 
+        'http://localhost:5173',
+        'https://zyntrix-etyw.vercel.app'
     ],
     credentials: true,
 };
+
 // Middleware
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+
 app.use(express.json());
 
-console.log('Using in-memory data store for testing. Database connection bypassed.');
+console.log('Server started - CORS enabled');
 
-// Routes
+/* =========================
+   ROUTES
+========================= */
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/notes', require('./routes/noteRoutes'));
 app.use('/api/ai', require('./routes/aiRoutes'));
 app.use('/api/dashboard', require('./routes/dashboardRoutes'));
 
+/* =========================
+   HEALTH CHECK
+========================= */
+app.get('/', (req, res) => {
+    res.send('Backend is running 🚀');
+});
+
+/* =========================
+   SERVER START
+========================= */
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
