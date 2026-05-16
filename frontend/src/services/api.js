@@ -1,11 +1,15 @@
 import axios from 'axios';
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+// Get URL from Vercel Environment Variables
+const RAW_URL = import.meta.env.VITE_API_URL;
 
 // Safety check (production-safe)
-if (!BASE_URL) {
+if (!RAW_URL) {
     throw new Error("❌ VITE_API_URL is missing in environment variables");
 }
+
+// Ye trailing slash '/' ko hata dega taaki "//api" wala CORS error na aaye
+const BASE_URL = RAW_URL.replace(/\/$/, '');
 
 const API_URL = `${BASE_URL}/api`;
 
@@ -53,11 +57,19 @@ export const noteAPI = {
 };
 
 /* =========================
-   AI API (FIX ADDED)
-   👉 THIS FIXES YOUR BUILD ERROR
+   AI API 
 ========================= */
 export const aiAPI = {
     generate: (data) => api.post('/ai/generate', data),
     improve: (data) => api.post('/ai/improve', data),
     summarize: (data) => api.post('/ai/summarize', data),
 };
+
+/* =========================
+   DASHBOARD API (Vercel Build Error Fix)
+========================= */
+export const dashboardAPI = {
+    getStats: () => api.get('/dashboard/stats'),
+};
+
+export default api;
