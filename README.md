@@ -1,93 +1,112 @@
-# Zyntrix – AI Powered Notes App
+# 🧠 Zyntrix – AI Powered Notes App
 
-Zyntrix is a full-stack AI-powered notes application that allows users to create, manage, and enhance notes using AI (Gemini API). It also supports authentication, search, tagging, and public sharing.
+Zyntrix is a full-stack AI-powered notes application that allows users to create, manage, and enhance notes using AI. It acts as a digital "Second Brain," supporting secure authentication, intelligent search, tagging, and public sharing.
 
 ---
 
-##  Features
+## 🚀 Features
 
--  User Authentication (JWT)
--  Create, Edit, Delete Notes
--  AI-powered note enhancement (Gemini API)
--  Search & Filter by tags
--  Public note sharing
--  Dashboard insights
--  Secure backend with Express & MongoDB
+- **User Authentication:** Secure login and registration using JWT.
+- **Note Management:** Create, edit, and delete notes seamlessly.
+- **AI Assistance:** Enhance, summarize, or generate content using the Google Gemini API.
+- **Search & Filter:** Easily find notes by keywords or custom tags.
+- **Public Sharing:** Generate shareable links for public notes.
+- **Dashboard Insights:** View analytics and note statistics at a glance.
+- **Secure Backend:** Robust API built with Node.js, Express, and MongoDB.
 
 ---
 
 ## 🛠 Tech Stack
 
-### Frontend
+**Frontend:**
 - React (Vite)
-- Axios
 - Tailwind CSS
+- Axios
 
-### Backend
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- JWT Authentication
-- Gemini API integration
-
----
-
-##  Project Structure
-
-
-frontend/
-backend/
-
+**Backend:**
+- Node.js & Express.js
+- MongoDB & Mongoose
+- JSON Web Tokens (JWT)
+- Google Gemini API
 
 ---
 
-##  Setup Instructions
+## 📂 Project Structure
 
-### 1. Clone repository
-```bash
-git clone https://github.com/your-username/zyntrix.git
+\`\`\`text
+zyntrix/
+├── frontend/       # React (Vite) application
+└── backend/        # Node.js & Express API
+\`\`\`
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
+\`\`\`bash
+git clone https://github.com/ayushikushwaha71-beep/zyntrix.git
 cd zyntrix
-2. Backend Setup
+\`\`\`
+
+### 2. Backend Setup
+\`\`\`bash
 cd backend
 npm install
+\`\`\`
 
-Create .env file:
-
+Create a \`.env\` file in the \`backend\` directory and add the following variables:
+\`\`\`env
 PORT=5000
 MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 GEMINI_API_KEY=your_gemini_key
 CLIENT_URL=http://localhost:5173
+\`\`\`
 
-Run backend:
-
+Run the backend server:
+\`\`\`bash
 npm start
-3. Frontend Setup
+\`\`\`
+
+### 3. Frontend Setup
+Open a new terminal window and navigate to the frontend folder:
+\`\`\`bash
 cd frontend
 npm install
+\`\`\`
 
-Create .env file:
-
+Create a \`.env\` file in the \`frontend\` directory:
+\`\`\`env
 VITE_API_URL=http://localhost:5000
+\`\`\`
 
-Run frontend:
-
+Run the frontend application:
+\`\`\`bash
 npm run dev
- Testing Features
-Register/Login user
-Create notes
-Edit/delete notes
-Use AI assist button
-Search/filter notes
-Share public link
-View dashboard analytics
+\`\`\`
 
- Deployment
-Frontend: Vercel
-Backend: Vercel 
-Database: MongoDB Atlas
+---
 
+## 🧪 Testing Features
 
- Author
+- [x] Register / Login user
+- [x] Create, edit, and delete notes
+- [x] Use AI assist button for text enhancement
+- [x] Search and filter notes
+- [x] Generate and test public sharing links
+- [x] View dashboard analytics
 
-Ayushi Kushwaha
+---
+
+## 🌍 Deployment
+
+- **Frontend:** Vercel
+- **Backend:** Vercel 
+- **Database:** MongoDB Atlas
+
+---
+
+## 👤 Author
+
+**Ayushi Kushwaha** Software Developer (MERN Stack)
