@@ -7,8 +7,17 @@ dotenv.config();
 
 const app = express();
 
+// CORS Configuration setup
+const corsOptions = {
+    origin: [
+        'http://localhost:5173', 
+        'https://zyntrix-2l1l.vercel.app' 
+    ],
+    credentials: true,
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 console.log('Using in-memory data store for testing. Database connection bypassed.');
