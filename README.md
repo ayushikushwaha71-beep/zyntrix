@@ -1,62 +1,93 @@
-# Zyntrix Collaborative AI Notes Workspace
+# Zyntrix – AI Powered Notes App
 
-This is a full-stack MERN application with a React (Vite) Frontend and a Node.js (Express) Backend.
-The application currently runs completely locally using an in-memory data store bypass (no MongoDB cluster required) so you can test it immediately out of the box!
-
-## Features included
-- **Frontend**: React + Vite + Tailwind CSS (Glassmorphism design matching original HTML).
-- **Backend**: Express + REST API for Authentication, Notes CRUD, Dashboard Stats.
-- **AI Integration**: Google Gemini API integration to analyze notes (summary and action items).
+Zyntrix is a full-stack AI-powered notes application that allows users to create, manage, and enhance notes using AI (Gemini API). It also supports authentication, search, tagging, and public sharing.
 
 ---
 
-## 🚀 How to Run the Project Locally
+##  Features
 
-### Step 1: Install Dependencies
-Open two separate terminals in your VS Code.
+-  User Authentication (JWT)
+-  Create, Edit, Delete Notes
+-  AI-powered note enhancement (Gemini API)
+-  Search & Filter by tags
+-  Public note sharing
+-  Dashboard insights
+-  Secure backend with Express & MongoDB
 
-**Terminal 1 (Backend):**
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React (Vite)
+- Axios
+- Tailwind CSS
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JWT Authentication
+- Gemini API integration
+
+---
+
+##  Project Structure
+
+
+frontend/
+backend/
+
+
+---
+
+##  Setup Instructions
+
+### 1. Clone repository
 ```bash
+git clone https://github.com/your-username/zyntrix.git
+cd zyntrix
+2. Backend Setup
 cd backend
 npm install
-```
 
-**Terminal 2 (Frontend):**
-```bash
+Create .env file:
+
+PORT=5000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+GEMINI_API_KEY=your_gemini_key
+CLIENT_URL=http://localhost:5173
+
+Run backend:
+
+npm start
+3. Frontend Setup
 cd frontend
 npm install
-```
 
-### Step 2: Start the Servers
-Once installations are complete, start both servers.
+Create .env file:
 
-**Terminal 1 (Backend):**
-```bash
-npm start
-```
-*Note: The backend runs on port 5000.*
+VITE_API_URL=http://localhost:5000
 
-**Terminal 2 (Frontend):**
-```bash
+Run frontend:
+
 npm run dev
-```
-*Note: The frontend runs on port 5173. Open `http://localhost:5173/` in your browser.*
+ Testing Features
+Register/Login user
+Create notes
+Edit/delete notes
+Use AI assist button
+Search/filter notes
+Share public link
+View dashboard analytics
 
----
+ Deployment
+Frontend: Vercel
+Backend: Vercel 
+Database: MongoDB Atlas
 
-## 🧪 Testing Credentials
 
-I have pre-configured a test user inside the backend so you can login and test the application immediately without needing to sign up:
+ Author
 
-- **Username / Email**: `zyntrixUser`
-- **Password**: `Zyntrix@12345`
-
-*Just type the username in the email field and the password, then click Sign In!*
-
----
-
-## 🛠️ Environment Variables
-The `backend/.env` file is already configured with your Google Gemini API key.
-If you ever want to connect this to a real MongoDB database in the future, simply change the `DATABASE_URL` in `backend/.env` and update `backend/config/db.js` to use `mongoose.connect()`.
-
-Enjoy using Zyntrix!
+Ayushi Kushwaha
