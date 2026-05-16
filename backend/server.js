@@ -22,3 +22,12 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log("Server running on", PORT);
 });
+
+const corsOptions = {
+    origin: [
+        'http://localhost:5173', 
+        'https://zyntrix-frontend.vercel.app' // <-- Yahan apna Main Frontend Link daalein
+    ],
+    credentials: true,
+};
+app.use(cors(corsOptions));
